@@ -1,6 +1,6 @@
 {
   "name": "ts-smart-mocker",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A TypeScript-based API mocking library for seamless development and testing",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
@@ -31,12 +31,12 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/diego.blanco1/ts-smart-mocker.git"
+    "url": "git+https://github.com/diegoblanco1/ts-smart-mocker.git"
   },
   "bugs": {
-    "url": "https://github.com/diego.blanco1/ts-smart-mocker/issues"
+    "url": "https://github.com/diegoblanco1/ts-smart-mocker/issues"
   },
-  "homepage": "https://github.com/diego.blanco1/ts-smart-mocker#readme",
+  "homepage": "https://github.com/diegoblanco1/ts-smart-mocker#readme",
   "dependencies": {
     "dotenv": "^16.5.0",
     "node-fetch": "^3.3.2"
