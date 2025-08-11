@@ -1,8 +1,11 @@
 import { promises as fs } from 'fs';
 import * as path from 'path';
+import { fileURLToPath } from 'url';
 
 // Get the absolute path to the storage file
-const STORAGE_FILE = path.join(process.cwd(), 'responses.json');
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
+const STORAGE_FILE = path.join(__dirname, '..', '..', 'responses.json');
 
 export const loadResponses = async (): Promise<Record<string, any>> => {
   try {
@@ -26,4 +29,8 @@ export const clearResponses = async (): Promise<void> => {
   } catch (error) {
     // File doesn't exist, ignore error
   }
+};
+
+export const clearResponses = async (): Promise<void> => {
+  await fs.writeFile(STORAGE_FILE, '{}');
 };

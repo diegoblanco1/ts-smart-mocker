@@ -248,7 +248,7 @@ export class ApiMocker {
       }
 
       // 2. If not mocking or no stored response, make real API call
-      const response = await fetch(input, init);
+      const response = await fetchWithAgent(input, init);
 
       // Handle non-200 status codes as errors
       if (!response.ok) {
@@ -275,7 +275,7 @@ export class ApiMocker {
             url, 
             method, 
             body: requestBody,
-            headers: init?.headers ? this.headersToRecord(new Headers(init.headers)) : undefined
+            headers: init?.headers ? this.headersToRecord(new Headers(init.headers as string[][])) : undefined
           }
         });
         await this.saveToStorage();
@@ -314,7 +314,7 @@ export class ApiMocker {
             url, 
             method, 
             body: requestBody,
-            headers: init?.headers ? this.headersToRecord(new Headers(init.headers)) : undefined
+            headers: init?.headers ? this.headersToRecord(new Headers(init.headers as string[][])) : undefined
           }
         });
         await this.saveToStorage();

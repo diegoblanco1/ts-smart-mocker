@@ -2,6 +2,7 @@
   "name": "ts-smart-mocker",
   "version": "1.0.2",
   "description": "A TypeScript-based API mocking library for seamless development and testing",
+  "type": "module",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "scripts": {
@@ -13,9 +14,7 @@
     "prepublishOnly": "npm run clean && npm run build"
   },
   "files": [
-    "dist/**/*",
-    "README.md",
-    "STORAGE_EXAMPLES.md"
+    "dist/**/*"
   ],
   "keywords": [
     "api",
@@ -47,6 +46,6 @@
     "typescript": "^5.9.2"
   },
   "engines": {
-    "node": ">=18.0.0"
+    "node": ">=20.0.0"
   }
 }

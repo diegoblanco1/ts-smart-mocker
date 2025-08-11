@@ -1,0 +1,40 @@
+{
+  "https://jsonplaceholder.typicode.com/posts/1_GET_3938": {
+    "response": {
+      "error": {
+        "message": "fetch failed",
+        "name": "TypeError",
+        "stack": "TypeError: fetch failed\n    at node:internal/deps/undici/undici:13502:13\n    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)\n    at async ApiMocker.smartFetch (/Users/dblanco/mocker/dist/api-mocker.js:228:30)\n    at async runTests (/Users/dblanco/mocker/dist/test.js:20:34)"
+      },
+      "data": null,
+      "success": false
+    },
+    "timestamp": "2025-08-11T14:15:35.272Z",
+    "headers": {},
+    "request": {
+      "url": "https://jsonplaceholder.typicode.com/posts/1",
+      "method": "GET"
+    }
+  },
+  "https://echo.free.beeceptor.com/sample-request?author=beeceptor_POST_944099232": {
+    "response": {
+      "error": {
+        "message": "fetch failed",
+        "name": "TypeError",
+        "stack": "TypeError: fetch failed\n    at node:internal/deps/undici/undici:13502:13\n    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)\n    at async ApiMocker.smartFetch (/Users/dblanco/mocker/dist/api-mocker.js:228:30)\n    at async runTests (/Users/dblanco/mocker/dist/test.js:49:36)"
+      },
+      "data": null,
+      "success": false
+    },
+    "timestamp": "2025-08-11T14:15:35.917Z",
+    "headers": {},
+    "request": {
+      "url": "https://echo.free.beeceptor.com/sample-request?author=beeceptor",
+      "method": "POST",
+      "body": "{\"name\":\"John Doe\",\"age\":30,\"city\":\"New York\"}",
+      "headers": {
+        "content-type": "application/json"
+      }
+    }
+  }
+}

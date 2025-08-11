@@ -13,9 +13,7 @@
     "prepublishOnly": "npm run clean && npm run build"
   },
   "files": [
-    "dist/**/*",
-    "README.md",
-    "STORAGE_EXAMPLES.md"
+    "dist/**/*"
   ],
   "keywords": [
     "api",
@@ -40,13 +38,14 @@
   },
   "homepage": "https://github.com/diegoblanco1/ts-smart-mocker#readme",
   "dependencies": {
-    "dotenv": "^17.2.1"
+    "dotenv": "^16.5.0",
+    "node-fetch": "^3.3.2"
   },
   "devDependencies": {
-    "@types/node": "^22.10.5",
-    "typescript": "^5.9.2"
+    "@types/node": "^20.17.46",
+    "typescript": "^5.0.0"
   },
   "engines": {
-    "node": ">=18.0.0"
+    "node": ">=20.0.0"
   }
 }

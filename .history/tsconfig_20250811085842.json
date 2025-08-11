@@ -1,12 +1,15 @@
 {
   "compilerOptions": {
     "target": "ES2022",
-    "module": "CommonJS",
-    "moduleResolution": "node",
+    "module": "ESNext",
+    "moduleResolution": "bundler",
     "lib": ["ES2022", "dom"],
     "allowSyntheticDefaultImports": true,
     "esModuleInterop": true,
+    "allowImportingTsExtensions": false,
     "resolveJsonModule": true,
+    "isolatedModules": true,
+    "noEmit": false,
     "sourceMap": true,
     "declaration": true,
     "outDir": "./dist",

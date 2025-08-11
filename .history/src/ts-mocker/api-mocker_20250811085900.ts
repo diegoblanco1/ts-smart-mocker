@@ -1,6 +1,17 @@
 import { MockConfig, StoredResponse, ApiMockerOptions, MockResponse } from './types.js';
 import { loadResponses, saveResponses, clearResponses } from './storage.js';
 
+// Configure node-fetch to use HTTPS
+const httpsAgent = new https.Agent({
+  rejectUnauthorized: false // Set to true in production
+});
+
+// Override fetch to use our agent
+const fetchWithAgent = (url: RequestInfo, options: RequestInit = {}) => {
+  const urlStr = typeof url === 'string' ? url : url instanceof URL ? url.toString() : url.url;
+  return fetch(urlStr, { ...options, agent: httpsAgent });
+};
+
 /**
  * Utility function to calculate hash code for request body
  * @param str The string to hash
@@ -248,7 +259,7 @@ export class ApiMocker {
       }
 
       // 2. If not mocking or no stored response, make real API call
-      const response = await fetch(input, init);
+      const response = await fetchWithAgent(input, init);
 
       // Handle non-200 status codes as errors
       if (!response.ok) {
@@ -275,7 +286,7 @@ export class ApiMocker {
             url, 
             method, 
             body: requestBody,
-            headers: init?.headers ? this.headersToRecord(new Headers(init.headers)) : undefined
+            headers: init?.headers ? this.headersToRecord(new Headers(init.headers as string[][])) : undefined
           }
         });
         await this.saveToStorage();
@@ -314,7 +325,7 @@ export class ApiMocker {
             url, 
             method, 
             body: requestBody,
-            headers: init?.headers ? this.headersToRecord(new Headers(init.headers)) : undefined
+            headers: init?.headers ? this.headersToRecord(new Headers(init.headers as string[][])) : undefined
           }
         });
         await this.saveToStorage();

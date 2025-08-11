@@ -13,9 +13,7 @@
     "prepublishOnly": "npm run clean && npm run build"
   },
   "files": [
-    "dist/**/*",
-    "README.md",
-    "STORAGE_EXAMPLES.md"
+    "dist/**/*"
   ],
   "keywords": [
     "api",

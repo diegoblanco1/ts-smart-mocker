@@ -1,7 +1,10 @@
 import { promises as fs } from 'fs';
 import * as path from 'path';
+import { fileURLToPath } from 'url';
 
-// Get the absolute path to the storage file
+// Get the absolute path to the storage file (ESM compatible)
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 const STORAGE_FILE = path.join(process.cwd(), 'responses.json');
 
 export const loadResponses = async (): Promise<Record<string, any>> => {

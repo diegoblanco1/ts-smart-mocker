@@ -314,7 +314,7 @@ export class ApiMocker {
             url, 
             method, 
             body: requestBody,
-            headers: init?.headers ? this.headersToRecord(new Headers(init.headers)) : undefined
+            headers: init?.headers ? this.headersToRecord(new Headers(init.headers as string[][])) : undefined
           }
         });
         await this.saveToStorage();
